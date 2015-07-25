@@ -1,0 +1,5 @@
+{
+  "preset": "airbnb",
+  "maxErrors": 10,
+  "excludeFiles": ["node_modules/**", "assets/bower_components/**"]
+}

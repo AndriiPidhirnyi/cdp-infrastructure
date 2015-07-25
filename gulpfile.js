@@ -8,6 +8,8 @@ var uglify = require('gulp-uglify');
 var filter = require('gulp-filter');
 var mainBowerFiles = require('main-bower-files');
 var replaceHTML = require('gulp-html-replace');
+var jshint = require('gulp-jshint');
+var jscs = require('gulp-jscs');
 
 /**
  * Configure objects
@@ -19,11 +21,13 @@ var conf = {
       all: 'assets/styles/*.less',
       target: 'assets/styles/all.less'
     },
-    js: [
-      'assets/js/*.js',
-      'assets/bower_components/jquery/dist/jquery.js',
-      'assets/bower_components/bootstrap/dist/js/bootstrap.js'
-    ],
+    js: {
+      script: 'assets/js/*.js',
+      vendor: [
+        'assets/bower_components/jquery/dist/jquery.js',
+        'assets/bower_components/bootstrap/dist/js/bootstrap.js'
+      ]
+    },
     html: 'assets/index.html'
   },
   build: {
@@ -48,12 +52,13 @@ var conf = {
 gulp.task('less', function() {
   return gulp.src([conf.source.less.target, conf.source.less.bootstrap])
     .pipe(less())
+    .pipe(autoprefixer(['last 2 versions']))
     .on('error', handleError)
     .pipe(gulp.dest(conf.build.cssPath));
 });
 
 gulp.task('js', function() {
-  return gulp.src(conf.source.js)
+  return gulp.src([conf.source.js.script, conf.source.js.vendor])
     .pipe(gulp.dest(conf.build.jsPath))
 });
 
@@ -78,11 +83,16 @@ gulp.task('styles:build', function() {
     .pipe(gulp.dest(conf.build.cssPath));
 });
 
-gulp.task('js:build', function() {
-  return gulp.src(mainBowerFiles({includeDev: true}))
+gulp.task('js:build',function() {
+  return gulp.src([conf.source.js.script].concat(mainBowerFiles({includeDev: true})))
     .pipe(filter('*.js'))
+    .pipe(jshint())
+    .pipe(jshint.reporter('jshint-stylish'))
+    .pipe(jscs())
+    .on('error', handleError)
     .pipe(concat(conf.build.jsName))
     .pipe(uglify())
+    .on('error', handleError)
     .pipe(gulp.dest(conf.build.jsPath));
 });
 
@@ -93,6 +103,14 @@ gulp.task('html:build', function() {
       'js': 'js/' + conf.build.jsName
     }))
     .pipe(gulp.dest(conf.build.htmlPath));
+});
+
+gulp.task('lint', function() {
+  return gulp.src(conf.source.js.script)
+    .pipe(jshint())
+    .pipe(jshint.reporter('jshint-stylish'))
+    .pipe(jscs())
+    .on('error', handleError)
 });
 
 /**

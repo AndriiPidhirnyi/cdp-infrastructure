@@ -1,0 +1,20 @@
+{
+  "maxcomplexity": 10,
+  "maxdepth": 3,
+  "maxparams": 3,
+  "maxstatements": 15,
+  "undef": true,
+  "unused": true,
+  "freeze": true,
+  "passfail": false,
+  "maxerr": 5,
+  "browser": false,
+  "node": true,
+  "jasmine": true,
+  "debug": false,
+  "devel": true,
+  "strict": true,
+  "globalstrict": true,
+  "validthis": true,
+  "indent": 4
+}
