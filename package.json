@@ -1,0 +1,26 @@
+{
+  "name": "cdp-infrastructure",
+  "version": "0.0.1",
+  "description": "A training project to summarize knowledge about Web infrastructure",
+  "main": "index.js",
+  "scripts": {
+    "bower": "./node_modules/.bin/bower install bootstrap",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AndriiPidhirnyi/cdp-infrastructure.git"
+  },
+  "keywords": [
+    "gulp",
+    "travix-ci",
+    "bower",
+    "npm"
+  ],
+  "author": "andrii pidhirnyi <andrii_pidhirnyi@epam.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndriiPidhirnyi/cdp-infrastructure/issues"
+  },
+  "homepage": "https://github.com/AndriiPidhirnyi/cdp-infrastructure"
+}

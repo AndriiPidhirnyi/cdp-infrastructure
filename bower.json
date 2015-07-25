@@ -1,0 +1,17 @@
+{
+  "name": "cdp-infrastructure",
+  "version": "0.0.1",
+  "homepage": "https://github.com/AndriiPidhirnyi/cdp-infrastructure",
+  "authors": [
+    "Andrii Pidhirnyi <andrii_pidhirnyi@epam.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./assets/bower_components",
+    "test",
+    "tests"
+  ]
+}
