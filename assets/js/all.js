@@ -1,6 +1,7 @@
 /**
  * Summarizes two floats.
  *
+ * @method summator
  * @param {number} val1   The first component
  * @param {number} val2   The second component
  * @return {number}
