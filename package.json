@@ -4,7 +4,7 @@
   "description": "A training project to summarize knowledge about Web infrastructure",
   "main": "index.js",
   "scripts": {
-    "bower": "bower install bootstrap",
+    "postinstall": "bower install bootstrap",
     "lint": "gulp lint",
     "watch": "gulp watch",
     "release": "gulp release",
