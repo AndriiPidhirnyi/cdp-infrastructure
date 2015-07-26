@@ -4,10 +4,10 @@
   "description": "A training project to summarize knowledge about Web infrastructure",
   "main": "index.js",
   "scripts": {
-    "bower": "./node_modules/.bin/bower install bootstrap",
-    "lint": "node node_modules/gulp/bin/gulp --gulpfile gulpfile.js lint",
-    "watch": "node node_modules/gulp/bin/gulp --gulpfile gulpfile.js watch",
-    "release": "node node_modules/gulp/bin/gulp --gulpfile gulpfile.js release",
+    "bower": "bower install bootstrap",
+    "lint": "gulp lint",
+    "watch": "gulp watch",
+    "release": "gulp release",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,7 +16,7 @@
   },
   "keywords": [
     "gulp",
-    "travix-ci",
+    "travis-ci",
     "bower",
     "npm"
   ],
@@ -25,6 +25,10 @@
   "bugs": {
     "url": "https://github.com/AndriiPidhirnyi/cdp-infrastructure/issues"
   },
+   "bin" : { 
+    "bower": "./node_modules/.bin/bower",
+    "gulp": "./node_modules/.bin/gulp"
+    },
   "homepage": "https://github.com/AndriiPidhirnyi/cdp-infrastructure",
   "devDependencies": {
     "gulp": "^3.9.0",
@@ -40,5 +44,8 @@
     "gulp-util": "^3.0.6",
     "jshint-stylish": "^2.0.1",
     "main-bower-files": "^2.9.0"
+  },
+  "dependencies": {
+    "bower": "^1.4.1"
   }
 }

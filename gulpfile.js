@@ -58,7 +58,7 @@ gulp.task('less', function() {
 });
 
 gulp.task('js', function() {
-  return gulp.src([conf.source.js.script, conf.source.js.vendor])
+  return gulp.src([conf.source.js.script].concat(conf.source.js.vendor))
     .pipe(gulp.dest(conf.build.jsPath))
 });
 

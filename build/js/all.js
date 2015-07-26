@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Summarizes two floats.
  *
@@ -12,3 +14,5 @@ function summator(val1, val2) {
 
   return first + second;
 }
+
+window.summator = summator;
