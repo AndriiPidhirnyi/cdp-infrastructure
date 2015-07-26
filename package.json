@@ -7,8 +7,7 @@
     "postinstall": "bower install bootstrap",
     "lint": "gulp lint",
     "watch": "gulp watch",
-    "release": "gulp release",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "release": "gulp release"
   },
   "repository": {
     "type": "git",
