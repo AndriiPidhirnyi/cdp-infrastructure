@@ -17,31 +17,31 @@ var jscs = require('gulp-jscs');
 var conf = {
   source: {
     less: {
-      bootstrap: 'assets/bower_components/bootstrap/less/bootstrap.less',
-      all: 'assets/styles/*.less',
-      target: 'assets/styles/all.less'
+      bootstrap: './assets/bower_components/bootstrap/less/bootstrap.less',
+      all: './assets/styles/*.less',
+      target: './assets/styles/all.less'
     },
     js: {
-      script: 'assets/js/*.js',
+      script: './assets/js/*.js',
       vendor: [
-        'assets/bower_components/jquery/dist/jquery.js',
-        'assets/bower_components/bootstrap/dist/js/bootstrap.js'
+        './assets/bower_components/jquery/dist/jquery.js',
+        './assets/bower_components/bootstrap/dist/js/bootstrap.js'
       ]
     },
-    html: 'assets/index.html'
+    html: './assets/index.html'
   },
   build: {
     cssName: 'all.min.css',
-    cssPath: 'build/css',
+    cssPath: './build/css',
     jsName: 'all.min.js',
-    jsPath: 'build/js',
-    htmlPath: 'build'
+    jsPath: './build/js',
+    htmlPath: './build'
   },
   release: {
-    cssPath: 'build/css',
+    cssPath: './build/css',
     cssName: 'all.min.css',
-    htmlPath: 'build',
-    jsPath: 'build/js',
+    htmlPath: './build',
+    jsPath: './build/js',
     jsName: 'all.min.js'
   }
 };
